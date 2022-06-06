@@ -1,31 +1,20 @@
-let n,
-    A = [],
-    B = [],
-    C = [],
-    switchBtn,
-    mod,
-    count;
+const move = (n, start, to) => {
+    console.log(`{${n}}번 원반을 {${start}}에서 {${to}}로 이동`);
+    times++;
+};
 
-n = 2;
-
-for (let i = 1; i <= n; i++) {
-    A.push(i);
-}
-mod = A.length % 2;
-
-while (A.length || B.length) {
-    switch (mod) {
-        case 0:
-            switchBtn = C;
-            break;
-        case !0:
-            switchBtn = B;
-            break;
+const hanoi = (n, start, to, index) => {
+    if (n === 1) {
+        move(n, start, index);
+    } else {
+        hanoi(n - 1, start, index, to);
+        move(n, start, index);
+        hanoi(n - 1, to, start, index);
     }
-    switchBtn.unshift(A[0]);
-    A.shift[0];
-}
+};
 
-console.log(A);
-console.log(B);
-console.log(C);
+const disc = 3;
+let times = 0;
+
+hanoi(disc, 'A', 'B', 'C');
+console.log(times);
