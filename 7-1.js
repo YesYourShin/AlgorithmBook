@@ -1,11 +1,12 @@
-let num1 = 1112;
-let num2 = 695;
-let remainder;
+const uclideanAlgorithm = (n1, n2) => {
+    // 두 수
+    const remainder = n1 % n2; // mod 연산하여 나온 나머지
+    if (!remainder) {
+        // 나머지가 0일 경우 재귀 종료
+        return console.log('최대공약수: ', n2);
+    }
+    // 나머지가 0이 아닐 경우 재귀
+    return uclideanAlgorithm(n2, remainder);
+};
 
-do {
-    remainder = num1 % num2;
-    num1 = num2;
-    num2 = remainder;
-} while (!remainder);
-
-console.log(num2);
+uclideanAlgorithm(1112, 695);
