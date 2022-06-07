@@ -1,4 +1,4 @@
-const uclideanAlgorithm = (n1, n2) => {
+const euclideanAlgorithm = (n1, n2) => {
     // 두 수
     const remainder = n1 % n2; // mod 연산하여 나온 나머지
     if (!remainder) {
@@ -6,7 +6,7 @@ const uclideanAlgorithm = (n1, n2) => {
         return console.log('최대공약수: ', n2);
     }
     // 나머지가 0이 아닐 경우 재귀
-    return uclideanAlgorithm(n2, remainder);
+    return euclideanAlgorithm(n2, remainder);
 };
 
-uclideanAlgorithm(1112, 695);
+euclideanAlgorithm(1112, 695);
