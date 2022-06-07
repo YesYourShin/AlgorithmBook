@@ -5,15 +5,15 @@ const move = (n, start, to) => {
 
 const hanoi = (n, start, to, index) => {
     if (n === 1) {
-        move(n, start, index);
+        return move(n, start, index);
     } else {
         hanoi(n - 1, start, index, to);
         move(n, start, index);
-        hanoi(n - 1, to, start, index);
+        return hanoi(n - 1, to, start, index);
     }
 };
 
-const disc = 3;
+const disc = 4;
 let times = 0;
 
 hanoi(disc, 'A', 'B', 'C');
