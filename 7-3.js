@@ -20,17 +20,17 @@ const start = startPage => {
 };
 
 const loop = startPage => {
-    // 입장한 페이지 스코어 업
-    page[startPage] += 1;
     // 1000회 시뮬을 위한 페이지 스코어 합산 확인
     let sum = 0;
-    for (let times of page) {
+    for (const times of page) {
         sum = sum + times;
     }
-    if (sum === 1000) {
+    if (sum >= 1000) {
         // 1000회일 경우 스톱
         return;
     } else {
+        // 입장한 페이지 스코어 업
+        page[startPage] += 1;
         const probability = Math.random();
         if (probability <= 0.15) {
             // 15% 확률로 텔레포트
